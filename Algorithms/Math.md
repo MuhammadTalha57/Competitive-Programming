@@ -13,3 +13,9 @@ long long binpow(long long a, long long b) {
 }
 ```
 > Time Complexity = O(log b), Space Complexity = O(1)
+
+## 2. Modular Arithmetic
+
+$(a + b) mod m = ( (a mod m) + (b mod m) ) mod m$
+$(a * b) mod m = ( (a mod m) * (b mod m) ) mod m$
+$(a - b) mod m = ( (a mod m) - (b mod m) + m ) mod m$
