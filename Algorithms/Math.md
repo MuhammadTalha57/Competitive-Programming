@@ -16,6 +16,6 @@ long long binpow(long long a, long long b) {
 
 ## 2. Modular Arithmetic
 
-$(a + b) mod m = ( (a mod m) + (b mod m) ) mod m$
-$(a * b) mod m = ( (a mod m) * (b mod m) ) mod m$
-$(a - b) mod m = ( (a mod m) - (b mod m) + m ) mod m$
+$$(a + b) mod m = ( (a mod m) + (b mod m) ) mod m$$
+$$(a * b) mod m = ( (a mod m) * (b mod m) ) mod m$$
+$$(a - b) mod m = ( (a mod m) - (b mod m) + m ) mod m$$
