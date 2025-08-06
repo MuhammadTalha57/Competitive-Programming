@@ -18,3 +18,11 @@
 ## 1. Segment Tree
 > Range Operations in logarithmic time, Requires linear memory
 > Can be used for higher dimensions as well such as Matrix
+
+# Stack
+
+## 1. Increasing Monotonic Stack
+> Useful for problems like finding next greater element
+
+## 2. Decreasing Monotonic Stack
+> Useful for problems like finding next smaller element

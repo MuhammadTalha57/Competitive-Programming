@@ -4,5 +4,5 @@
 /bits
 .vscode/
 debugging.cpp
-run.sh
+*.sh
 template.cpp
