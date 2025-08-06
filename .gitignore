@@ -1,2 +1,8 @@
 .cph
 *.out
+/ext
+/bits
+.vscode/
+debugging.cpp
+run.sh
+template.cpp

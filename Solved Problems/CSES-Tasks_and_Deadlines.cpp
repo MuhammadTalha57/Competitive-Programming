@@ -38,12 +38,6 @@ void yes() { cout<<"YES\n"; }
 void no() { cout<<"NO\n"; }
 void printCase(int i) {cout << "Case " << i << ": ";}
 
-bool comp(pii& a, pii& b) {
-    if(a.second == b.second) {
-        return a.first <= b.first;
-    }
-    return a.second < b.second;
-}
 
 void solve() {
     int n;
@@ -55,7 +49,7 @@ void solve() {
         tasks.pb({a, b});
     }
 
-    sort(all(tasks), comp);
+    sort(all(tasks));
 
     ll res = 0;
 
@@ -74,7 +68,7 @@ void solve() {
 
 }
 
-//Problem Link: 
+//Problem Link: https://cses.fi/problemset/task/1630
 
 int main() {
    ios::ios_base::sync_with_stdio(0);
