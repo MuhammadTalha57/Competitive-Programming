@@ -1,7 +1,7 @@
 ## 1. Segment Tree
 
 ```cpp
-vector<int> tree(N + 10);
+vector<int> tree((2 * N) + 10);
 
 void build(vector<int>& arr, int v, int tl, int tr) {
     // v is vertex where current segment will be stored
