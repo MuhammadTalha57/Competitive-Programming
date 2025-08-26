@@ -44,3 +44,7 @@ Each item **i** can be taken **at most k<sub>i</sub> times**
 > We use binary grouping for optimization.
 
 > Time Complexity O(W n log k), Space Complexity = O(W)
+
+## 4. Longest Increasing Subsequence (LIS)
+> Time Complexity O(N log N)
+Space Complexity O(N)

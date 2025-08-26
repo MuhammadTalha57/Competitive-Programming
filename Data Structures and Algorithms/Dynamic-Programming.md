@@ -78,3 +78,60 @@ for(int i = 1; i <= n; i++) {
 
 ```
 > Time Complexity O(W n log k), Space Complexity = O(W)
+
+## 4. Longest Increasing Subsequence (LIS)
+
+> Using binary search and DP
+
+```cpp
+int n;
+cin >> n;
+vi arr(n);
+for(int i = 0; i < n; i++) {cin >> arr[i];}
+
+vi dp(n + 1, INF);
+dp[0] = -INF;
+vi dpInd(n + 1, -1);
+/*
+dp[i] is the smallest number on which LIS of length i ends.
+
+LIS length will be the max i where dp[i] < INF
+
+To reconstruct LIS, We can use array p which points to the indices of the elements in dp array.
+p[i] will be the index of the of the previous element 
+*/
+
+
+int LISLength = 0, LISLstInd = -1;
+for(int j = 0; j < n; j++) {
+    int i = upper_bound(all(dp), arr[j]);
+
+    if(dp[i - 1] < arr[j] && arr[j] < dp[i] ) {
+        dp[i] = arr[j];
+        dpInd[i] = j;
+        p[j] = dpInd[i - 1];
+
+        if(i > LISLength) {
+            LISLength = i;s
+            LISLstInd = j;
+        }
+    }
+
+    cout << "LIS Length: " << LISLength << '\n';
+    if(LISLength) {
+        vi seq;
+        int k = LISLstInd;
+        seq.pb(arr[k]);
+        while(p[k] != -1) {
+            k = p[k];
+            seq.pb(arr[k]);
+        }
+        reverse(all(seq));
+    }
+    print_v(seq);
+
+}
+
+
+```
+> Time Complexity O(W n log k), Space Complexity = O(W)

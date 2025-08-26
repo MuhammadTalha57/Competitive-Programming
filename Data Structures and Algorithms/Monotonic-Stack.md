@@ -10,7 +10,7 @@ for(int i = 0; i < n; i++) {
         s.pop();
     }
 
-    s.insert(arr[i]);
+    s.push(arr[i]);
 }
 ```
 
@@ -26,7 +26,7 @@ for(int i = 0; i < n; i++) {
         s.pop();
     }
 
-    s.insert(arr[i]);
+    s.push(arr[i]);
 }
 ```
 > Space Complexity = O(n)
