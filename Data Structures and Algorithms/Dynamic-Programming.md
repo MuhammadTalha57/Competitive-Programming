@@ -135,3 +135,79 @@ for(int j = 0; j < n; j++) {
 
 ```
 > Time Complexity O(W n log k), Space Complexity = O(W)
+
+## 5. Weighted Interval Scheduling
+> Given n jobs with starting time (a), ending time (b) and profit (p).
+Find the subset of mutually compatible jobs (Non Overlapping) which maximizes the profit.
+
+> We use Sorting + Binary Search + DP
+
+```cpp
+
+int n;
+cin >> n;
+vvi jobs(n + 1);
+jobs[0] = {0, 0, 0};
+int a, b, p;
+rep(i, 1, (n + 1)) {
+    cin >> a >> b >> p;
+    jobs[i] = {a, b, p};
+}
+
+// SORT JOBS w.r.t finish time  (Start Time doesn't matter)
+sort(jobs, ...)
+
+vi prev(n + 1, 0);
+// prev[i] give the highest index of the job among jobs (0 to i - 1)
+// which is compatible with job i.
+// Computed using Binary Search
+
+rep(i, 1, (n + 1)) {
+    int target = jobs[i][0]; // Start Time of job i
+    int lo = 1, hi = i - 1, mid;
+    int res = 0;
+    while(lo <= hi) {
+        mid = (lo + hi) / 2;
+
+        if(jobs[mid][1] < target) {
+            res = mid;
+            lo = mid + 1;
+        }
+        else {
+            hi = mid - 1;
+        }
+
+    }
+
+    prev[i] = res; // res is the index of the job among jobs (0 to i - 1) that is compatible with job i.
+}
+
+
+vll dp(n + 1, 0);
+// dp[i] is the max Profit when considering jobs (1 to i)
+
+rep(i, 1, (n + 1)) {
+    dp[i] = max(dp[i - 1], jobs[i][2] + dp[prev[i]]);
+}
+
+long long maxProfit = dp[n];
+
+// Reconstructing Subset
+int k = n;
+vi jobsSet;
+while(k != 0) {
+    if(jobs[k][2] + dp[prev[k]] > dp[k - 1]) {
+        // Job k was selected
+        jobsSet.pb(k);
+        k = prev[k];
+    }
+    else {
+        k = k - 1;
+    }
+}
+
+
+// Now just execute simple 0-1 Knapsack.
+
+```
+> Time Complexity O(W n log k), Space Complexity = O(W)
