@@ -206,8 +206,5 @@ while(k != 0) {
     }
 }
 
-
-// Now just execute simple 0-1 Knapsack.
-
 ```
 > Time Complexity O(W n log k), Space Complexity = O(W)
