@@ -52,3 +52,5 @@ Space Complexity =  O(N)
 ## 5. Weighted Interval Scheduling
 > Time Complexity = O(N log N)
 Space Complexity = O(N)
+
+## 6. Broken Profile DP

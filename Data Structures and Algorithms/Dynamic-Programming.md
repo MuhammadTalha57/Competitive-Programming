@@ -208,3 +208,64 @@ while(k != 0) {
 
 ```
 > Time Complexity O(W n log k), Space Complexity = O(W)
+
+## 6. Broken Profie DP
+> Problems falling under this category generally have the following properties:
+
+1. They're about filling a 2D grid.
+2. One of the dimensions is much smaller than the other.
+3. When filling the grid, each cell depends only on adjacent cells.
+4. The cells don't have many possible values (usually only 2).
+The third property is especially important, as it means that we can process the cells column-by-column (imagine a snake wrapping around the grid). We then only need to care about the rightmost processed cell in each row (hence the name "broken profile").
+
+>The fourth property suggests that we should use a bitmask to represent that broken profile.
+
+> dp[i][mask] = Number of ways to fill the grid from 0th column to ith column such that ith column has state = mask
+The final answer would be dp[m][0] i.e. Number of ways to fill grid up to the last column such that the mth (outside) column has no filled cell.
+
+```cpp
+int n, m;
+vvi dp;
+
+void dfs(int col, int row, int mask, int nextMask) {
+    if(row == n) {
+        dp[col + 1][nextMask] += dp[col][mask];
+        dp[col + 1][nextMask] %= MOD;
+        return;
+    }
+
+    if(mask & (1 << row)) {
+        dfs(col, row + 1, mask, nextMask);
+    }
+    else {
+        // Horizontal tile
+        dfs(col, row + 1, mask, nextMask | (1 << row));
+
+        // Vertical tile
+        if(row + 1 < n && !(mask & (1 << (row + 1)))) {
+            dfs(col, row + 2, mask, nextMask);
+        }
+    }
+
+}
+
+void solve() {
+    cin >> n >> m;
+
+    // Will Iterate column by column
+    // Each Comlumn will contain at most n (10) cells
+    // So for each column we have 2^10 states
+
+    dp.resize(m +  1, vi((1 << 10)));
+    dp[0][0] = 1;
+    int currMask = 0;
+    rep(col, 0, m) {
+        for(int mask = 0; mask < (1 << n); mask++) {
+            dfs(col, 0, mask, 0);
+        }
+    }
+    print(dp[m][0]);
+}
+
+```
+> Time Complexity O(W n log k), Space Complexity = O(W)
