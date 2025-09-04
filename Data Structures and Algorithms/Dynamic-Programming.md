@@ -134,7 +134,7 @@ for(int j = 0; j < n; j++) {
 
 
 ```
-> Time Complexity O(W n log k), Space Complexity = O(W)
+> Time Complexity O(n log n), Space Complexity = O(n)
 
 ## 5. Weighted Interval Scheduling
 > Given n jobs with starting time (a), ending time (b) and profit (p).

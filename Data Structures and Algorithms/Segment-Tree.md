@@ -24,7 +24,7 @@ int sum(int v, int tl, int tr, int l, int r) {
 }
 
 void update(int v, int tl, int tr, int pos, int newVal) {
-    // Only updates on value at given position
+    // Only updates one value at given position
     if(tl == tr) {
         tree[v] = newVal;
     }
