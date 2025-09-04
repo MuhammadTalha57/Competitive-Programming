@@ -268,4 +268,5 @@ void solve() {
 }
 
 ```
-> Time Complexity O(W n log k), Space Complexity = O(W)
+> Time Complexity = O(m m 2<sup>min(n, m)</sup>)
+Space Complexity = O(max(n, m) 2<sup>min(n, m)</sup>)

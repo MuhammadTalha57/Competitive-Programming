@@ -54,3 +54,5 @@ Space Complexity =  O(N)
 Space Complexity = O(N)
 
 ## 6. Broken Profile DP
+> Time Complexity = O(m m 2<sup>min(n, m)</sup>)
+Space Complexity = O(max(n, m) 2<sup>min(n, m)</sup>)
