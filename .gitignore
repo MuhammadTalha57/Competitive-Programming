@@ -6,3 +6,4 @@
 debugging.cpp
 *.sh
 template.cpp
+test.cpp
