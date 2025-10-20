@@ -59,5 +59,45 @@ Space Complexity = O(max(n, m) 2<sup>min(n, m)</sup>)
 
 # Graph
 
-## 1. Dijkstra
-> Shortest Path with positive weights
+# Path Finding Algorithms
+
+## 1. BFS
+> Given a **unweighted** graph with n vertices, m edges and a source vertex s. Find Shortest path to all nodes from the given source node (s)
+
+> Time Complexity = O(N + M)
+
+## 2. 0-1 BFS
+> Given a **weighted** graph with weights **0** or **1** with n vertices, m edges and a source vertex s. Find Shortest path to all nodes from the given source node (s)
+
+> Time Complexity = O(N + M)
+
+## 3. K-BFS (Dials Aglrorithm)
+> Given a **weighted** graph with weights at most k with n vertices, m edges and a source vertex s. Find Shortest path to all nodes from the given source node (s)
+
+> Time Complexity = O(N + M + k * N)
+
+## 4. Bellman Ford
+> Given a **weighted** graph with n vertices, m edges and a source vertex s. Find Shortest path to all nodes from the given source node (s)
+
+> Time Complexity = O(N M)
+
+## 5. Shortest Path Faster Algorithm (Bellman Ford Improvement)
+> Given a **weighted** graph with n vertices, m edges and a source vertex s. Find Shortest path to all nodes from the given source node (s)
+
+> Time Complexity = O(N M), Avg Time Complexity = O(M)
+
+
+## 6. Dijkstra For Dense Graph
+> Given a **weighted** graph with n vertices, m edges, a source vertex s and with no **negative cycle**. Find Shortest path to all nodes from the given source node (s)
+
+> Time Complexity = O(N<sub>2</sub> + M)
+
+## 7. Dijkstra For Sparse Graph
+> Given a **weighted** graph with n vertices, m edges, a source vertex s and with no **negative cycle**. Find Shortest path to all nodes from the given source node (s)
+
+> Time Complexity = O(M Log N)
+
+## 8. Floyd Warshall
+> Given a **weighted** graph with n vertices, m edges and a source vertex s. Find Shortest path from all nodes to all other nodes.
+
+> Time Complexity = O(N^3), Space Complexity = O(N^2)
