@@ -7,3 +7,6 @@ debugging.cpp
 *.sh
 template.cpp
 test.cpp
+CSES Probs.txt
+CFLoadTesting.py
+results.csv

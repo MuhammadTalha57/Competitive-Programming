@@ -19,6 +19,9 @@
 > Range Operations in logarithmic time, Requires linear memory
 > Can be used for higher dimensions as well such as Matrix
 
+## 2. Lazy Segment Tree
+> Range Operations in logarithmic time, Requires linear memory
+> Allows range modifications in logarithmic time.
 # Stack
 
 ## 1. Increasing Monotonic Stack
