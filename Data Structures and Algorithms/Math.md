@@ -72,3 +72,11 @@ log_u(x) = \frac{log_k(x)}{log_k(u)}
 
 ### 8.1 Volume of Sphere
 $V = \frac{4}{3}\pi r^3$
+
+
+## 8. Modular Inverse Factorial
+```cpp
+ll inv(int a){
+    return a <= 1 ? a : MOD - MOD / a * inv(MOD % a) % MOD;
+}
+```
